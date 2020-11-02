@@ -1,0 +1,167 @@
+/* Color Scheme
+gunmetal - #2B2D42
+grayblue - #8D99AE
+antiflashwhite - #EDF2F4
+orange - #FC8327
+orangebrown - #B06A32
+*/
+
+
+/* Global Styles
+--------------------------------------*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  }
+  h1, h2 {
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3{
+    margin: 0;
+  }
+  a {
+    color: #B06A32;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #FC8327;
+  }
+  .content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    margin-top: 0;
+    overflow: hidden;
+  }
+  .uppercase{
+    text-transform: uppercase;
+  }
+  .btn {
+    text-decoration: none;
+    background: #FC8327;
+    padding: 10px;
+    color: #EDF2F4;
+    display: inline-block;
+  }
+  /* Header and Footer
+  --------------------------------------*/
+  header, footer {
+    background: #2B2D42;
+    color: #8D99AE;
+  }
+  /* header only */
+  header {
+    padding-top: 50px;
+    position: relative;
+  }
+  .mypic {
+    border-radius: 50%;
+  }
+  header h1, header h2 {
+    color: #EDF2F4 ;
+    margin: 0;
+  }
+  header p {
+    line-height: 1.75em;
+  }
+  /* footer only */
+  footer {
+    text-align: center;
+  }
+  .contact-info a {
+    font-size: 3em;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  .download {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  /* Navigation
+  --------------------------------------*/
+  nav {
+    text-align: center;
+    background: #EDF2F4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  /* Work Experience
+  --------------------------------------*/
+  .work {
+    background: #8D99AE;
+    color: #2B2D42;
+  }
+  h3 ~ p {
+    margin: 0;
+  }
+  .job-description{
+    margin-bottom: 25px;
+  }
+  .job-description p:first-of-type {
+    margin-top: 0;
+  }
+  /* Education
+  --------------------------------------*/
+  .education {
+    /*background: #FC8327;*/
+    color: #2B2D42;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)),
+    url(../images/windmillsatsunset.png) no-repeat fixed top;
+    background-size: cover;
+  }
+  p + h3 {
+    margin-top: 30px;
+  }
+  /* Media Queries
+  ------------------------------*/
+  @media (min-width: 800px){
+    .col-narrow {
+      width: 30%;
+      float: left;
+    }
+    .col-wide {
+      width: 70%;
+      float: left;
+      padding-left: 20px;
+    }
+  }
+  @media (max-width: 799px){
+    header{
+      text-align: center;
+    }
+    .mypic{
+      width: 250px;
+    }
+    .contact-info a {
+      padding: 5px 10px;
+    }
+    .col-wide{
+      margin-top: 10px;
+    }
+    .studies{
+      margin-top: 10px;
+    }
+  }
+  
