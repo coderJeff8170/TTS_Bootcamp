@@ -13,7 +13,9 @@ let precipitation = false;
 let indoors = false;
 let statement = `The temperature is ${temp} degrees`;
 
+console.log(statement);
+
 if(indoors || !precipitation && temp >= 80){
     console.log('time to swim');
 }
-console.log(statement);
+

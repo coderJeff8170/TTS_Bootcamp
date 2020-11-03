@@ -9,11 +9,114 @@ orangebrown - #B06A32
 
 /* Global Styles
 --------------------------------------*/
+body {
+  background: #c6cfdf;
+}
 /* ----------- Classes --------------- */
-.navbar-custom {
-  background-color: #ff5500;
+
+.navbar-brand {
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+  font-size: 2em;
 }
 
-#test {
+.navbar-custom {
+  background:#2B2D42;
+}
+.mypic {
+  border-radius: 50%;
+  width: 200px;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 10px;
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+  background:  #2B2D42;
+  color:  #8D99AE;
+}
+
+.skill > p {
+  margin: 25px 20px;
+  /* border: 2px solid red; */
+}
+
+.skill:nth-child(2) {
+  background: #8D99AE;
+}
+
+/* section>div:nth-child(2) {
+  background: #c6cfdf;
+} */
+
+#header {
+    text-align: center;
+    background:  #8D99AE;
+    color: #2B2D42;
+  padding: 70px 20px 20px 20px;
+}
+
+#header h1, #header h2 {
+  background:  #8D99AE;
+  color: #2B2D42;
+  margin: 0;
+}
+
+#header h1 {
+  font-size: 3em;
+}
+
+a {
+  color: #B06A32;
+}
+a:hover {
+  text-decoration: none;
+  color: #FC8327;
+}
+.navbar > a, .nav-link {
+  color: #B06A32 !important;
+}
+
+
+.test {
   border: 2px solid red;
 }
+
+
+
+
+
+/* ---------- footer ----------- */
+
+footer {
+  text-align: center;
+  background: #2B2D42;
+  color: #8D99AE;
+  padding-bottom: 5px;
+}
+#contact-info a {
+  font-size: 2em;
+  padding: 10px 5px;
+  display: inline-block;
+}
+
+ /* Media Queries
+  ------------------------------*/
+  @media (min-width: 764px){
+    
+    #header h1 {
+      font-size: 2em;
+    }
+
+    #contact-info a {
+      font-size: 3em;
+      padding: 10px 20px;
+    }
+
+
+
+
+
+
+  }
