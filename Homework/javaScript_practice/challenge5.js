@@ -1,14 +1,17 @@
 
 /*
-Name of the course ('JavaScript Applications')
 
-Name of the second teacher ('Shane')
+Get the following values:
 
-Name of the first student ('Steve')
+Name of the course ('JavaScript Applications')[X]
 
-Katy's computer type ('macbook')
+Name of the second teacher ('Shane')[X]
 
-The preReq equipment object
+Name of the first student ('Steve')[X]
+
+Katy's computer type ('macbook')[X]
+
+The preReq equipment object[X]
 
 The second OSOption from equipment prereqs ('osx')
 
@@ -53,3 +56,20 @@ let course = {
 		}
 	}
 };
+
+console.log(course.name); //Javascript Applications
+console.log(course.teachers[1]); //Shane
+console.log(course.students[0].name); //Steve
+console.log(course.students[1].computer.type); //macbook
+console.log(course.preReqs.equipment);// { laptop: true, OSOptions: [ 'linux', 'osx' ] }
+console.log(course.preReqs.equipment.OSOptions[1]);//osx
+console.log(`${course.preReqs.equipment.OSOptions[0]} or ${course.preReqs.equipment.OSOptions[1]}`);
+
+let osxStudents = [];
+for(let i=0; i<course.students.length; i++){
+	if(course.students[i].computer.OS==='OSX'){
+		osxStudents.push(course.students[i]);
+	}
+}
+
+console.log(osxStudents);//[{ name: 'Katy', computer: { OS: 'OSX', type: 'macbook' } }, { name: 'Chuck', computer: { OS: 'OSX', type: 'macbook' } } ]
