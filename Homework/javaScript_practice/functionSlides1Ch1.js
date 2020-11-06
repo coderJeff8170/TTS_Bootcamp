@@ -18,7 +18,7 @@ Bonus: Find a way to fix the decimal point to only 2 places (ie: 120.00)[X]
 let billAmount = 100;
 
 function gratuity(amt){
-    return amt * .2;
+    return amt * .18;
 }
 
 function totalWithGrat(amt){

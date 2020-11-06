@@ -1,19 +1,17 @@
 /*
-Create a single object named "slideshow" that represents the data and functionality of a picture slideshow. There should be NO VARIABLES OUTSIDE THE OBJECT. The object should have properties for:
+Going back to our slideshow object, let's add some functionality.
 
-An array called photoList that contains the names of the photos as strings
+Create an empty property named playInterval[X]
 
-An integer currentPhotoIndex that represents which photo in the photoList is currently displayed
+A play() function that moves to the next photo ever 2000ms until the end.
 
-A nextPhoto() function that moves currentPhotoIndex to the next index ifthere is one, and:
+Tip - use playInterval = setInterval(fn,ms).
 
-logs the current photo name.
+A pause() function that stops the slideshow
 
-Otherwise, log "End of slideshow";
+ Tip - use clearInterval(playInterval)
 
-A prevPhoto() function that does the same thing, but backwards.
-
-A function getCurrentPhoto() that returns the current photo from the list.
+Automatically pause the slideshow if it gets to the end of the photolist while playing.
 */
 
 let slideShow = {
@@ -39,8 +37,9 @@ let slideShow = {
     getCurrentPhoto: function(){
         console.log(this.photoList[this.currentPhotoIndex])
         // return list[index];
-        
-    }
+    },
+    playIterval: 2000,
+
 }
 slideShow.nextPhoto();
 slideShow.nextPhoto();

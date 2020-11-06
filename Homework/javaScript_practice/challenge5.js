@@ -61,6 +61,7 @@ console.log(course.name); //Javascript Applications
 console.log(course.teachers[1]); //Shane
 console.log(course.students[0].name); //Steve
 console.log(course.students[1].computer.type); //macbook
+console.log(course.preReqs);
 console.log(course.preReqs.equipment);// { laptop: true, OSOptions: [ 'linux', 'osx' ] }
 console.log(course.preReqs.equipment.OSOptions[1]);//osx
 console.log(`${course.preReqs.equipment.OSOptions[0]} or ${course.preReqs.equipment.OSOptions[1]}`);
