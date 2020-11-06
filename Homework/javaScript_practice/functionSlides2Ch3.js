@@ -38,11 +38,16 @@ let slideShow = {
         console.log(this.photoList[this.currentPhotoIndex])
         // return list[index];
     },
-    playIterval: 2000,
-
+    // playInterval: setInterval(()=>this.play, 2000),
+    play: function(){
+        do{
+            this.nextPhoto();
+            
+        }while(this.currentPhotoIndex<this.photoList.length);
+        // this.nextPhoto();
+    },
+    pause: clearInterval(this.playInterval)
+    
 }
-slideShow.nextPhoto();
-slideShow.nextPhoto();
-slideShow.prevPhoto();
-slideShow.prevPhoto();
-slideShow.prevPhoto();
+
+slideShow.play();
