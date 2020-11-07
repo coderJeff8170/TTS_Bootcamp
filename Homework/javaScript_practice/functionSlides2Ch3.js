@@ -18,12 +18,13 @@ let slideShow = {
     photoList: ['Jeff', 'Jenn', 'Sophia', 'Granny'],
     currentPhotoIndex: 0,
     nextPhoto: function(){
-        if(this.currentPhotoIndex < this.photoList.length-1){
-            this.currentPhotoIndex ++;
+        if(this.currentPhotoIndex < this.photoList.length){
             console.log(this.currentPhotoIndex);
             console.log(`you now see a photo of ${this.photoList[this.currentPhotoIndex]}`);
+            this.currentPhotoIndex ++;
         }else{
             console.log('end of list');
+            this.pause();
         }
     },
     prevPhoto: function(){
@@ -32,21 +33,21 @@ let slideShow = {
             console.log(`you now see a photo of ${this.photoList[this.currentPhotoIndex]}`);
         }else{
             console.log('start of list');
+            this.pause();
         }
     },
     getCurrentPhoto: function(){
         console.log(this.photoList[this.currentPhotoIndex])
         // return list[index];
     },
-    // playInterval: setInterval(()=>this.play, 2000),
-    play: function(){
-        do{
-            this.nextPhoto();
-            
-        }while(this.currentPhotoIndex<this.photoList.length);
-        // this.nextPhoto();
+    playInterval: null,
+    play: function() {
+        var self = this;
+        this.playInterval = setInterval(function(){self.nextPhoto()}, 2000)
     },
-    pause: clearInterval(this.playInterval)
+    pause: function() {
+        clearInterval(this.playInterval);
+    }
     
 }
 
