@@ -1,0 +1,5 @@
+-- SELECT * FROM artists;
+-- SELECT Firstname, lastname FROM Customers;
+-- SELECT name FROM tracks;
+-- SELECT everything from the songs table whose id numbers are even and greater than 50, or odd and less than ten.
+-- SELECT * FROM tracks WHERE  (trackid%2 = 1 AND trackid < 10) OR (trackid%2 = 0 AND trackid > 50);
