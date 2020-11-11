@@ -3,3 +3,61 @@
 -- SELECT name FROM tracks;
 -- SELECT everything from the songs table whose id numbers are even and greater than 50, or odd and less than ten.
 -- SELECT * FROM tracks WHERE  (trackid%2 = 1 AND trackid < 10) OR (trackid%2 = 0 AND trackid > 50);
+-- CREATE TABLE User
+-- (
+	-- UserID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+	-- FirstName VARCHAR NOT NULL,
+	-- LastName VARCHAR NOT NULL,
+	-- Birthplace VARCHAR NOT NULL,
+	-- CreatedAt DATETIME NOT NULL,
+	-- UpdatedAt DATETIME NULL
+-- );
+--INSERT INTO User 
+--(
+  --FirstName, 
+  --LastName,
+  --Birthplace,
+ -- CreatedAt
+--)  
+--VALUES 
+-- (	
+ -- 'Sophia', 
+ -- 'Andrews', 
+--  'Charlotte, North Carolina',
+ -- CURRENT_DATE
+-- );
+--UPDATE user SET firstname = 'Bobby',
+--	lastname = 'Tables',
+--    birthplace = 'New York, New York',
+ --   updatedat = CURRENT_TIMESTAMP
+--WHERE firstname like 'Wesley' AND userid = 1;
+
+--BEGIN TRANSACTION;
+--DELETE FROM user;
+
+--ROLLBACK;
+--SELECT * FROM user;
+--CREATE TABLE Favorite 
+--(
+--	FavoriteID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+--	UserID INTEGER NOT NULL,
+--	ArtistID INTEGER, 
+--	AlbumID INTEGER,
+--	SongID INTEGER,
+--	GenreID INTEGER,
+--	CreatedAt DATETIME NOT NULL,
+--	UpdatedAt DATETIME NULL,
+--	FOREIGN KEY (UserID) REFERENCES User (UserID),
+--	FOREIGN KEY (ArtistID) REFERENCES artists (artistid),
+--	FOREIGN KEY (AlbumID) REFERENCES albums (albumid),
+--	FOREIGN KEY (SongID) REFERENCES tracks (trackid),
+--	FOREIGN KEY (GenreID) REFERENCES genres (genreid)
+--);
+--BEGIN TRANSACTION;
+--INSERT INTO Favorite (userid, createdat)
+--SELECT userid, createdat FROM user;
+--SELECT * FROm Favorite;
+--BEGIN TRANSACTION;
+--DELETE FROM favorite WHERE (favoriteid%2 = 1) OR (favoriteid%2 = 0 AND favoriteid > 10);
+
+--rollback;

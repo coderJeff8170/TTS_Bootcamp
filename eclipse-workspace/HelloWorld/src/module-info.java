@@ -1,3 +1,2 @@
-module HelloWorld {
-	
+module helloWorld {
 }
