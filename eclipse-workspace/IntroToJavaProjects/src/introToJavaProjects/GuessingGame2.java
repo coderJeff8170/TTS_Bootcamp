@@ -23,11 +23,6 @@ public class GuessingGame2 {
 		//get input
 		int myNum = Integer.parseInt(myScan.nextLine());
 		
-		//if the input is not an integer, try again
-		if(!(myNum % 1 == 0)){
-			System.out.println("Sorry, try again!");
-		
-		}
 		//generate random number between 1 and 100
 		//int rando = getRando(1, 100);
 		int rando = 50;//test
