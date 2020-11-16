@@ -36,10 +36,10 @@ public class PracticeInputLoop {
 		Scanner sc = new Scanner(System.in);
 		String answer;
 	
-		    System.out.println("Please answer (Y/N)");
-		    
-		    while (!sc.hasNext("[yn]")) {
-		        System.out.println("Please input either y or n!");
+		    System.out.println("Please enter a word");
+		    //regex [yn] for either y or n
+		    while (!sc.hasNext("[A-Za-z]+")) {
+		        System.out.println("Please input an actual word!");
 		        sc.nextLine();
 		    }
 		    answer = sc.nextLine();

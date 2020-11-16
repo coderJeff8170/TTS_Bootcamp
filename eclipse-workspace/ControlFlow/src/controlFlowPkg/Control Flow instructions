@@ -50,33 +50,35 @@ Implement the following:
 
 After the name prompt, ask the user if they wish to continue to the interactive portion. If they enter 'yes' or 'y', continue.  Otherwise quit the program with a message to please return later to complete the survey.  [X]
 
-Use a loop to repeatedly ask the user some questions. What will be done is to gather some random information from the user and then generate their potential winning Powerball numbers.  At the end, ask them if they would like to generate another set of numbers.  Note that it may be helpful to put example responses after each question.  
+Use a loop to repeatedly ask the user some questions. What will be done is to gather some random information from the user and then generate their potential winning Powerball numbers.  At the end, ask them if they would like to generate another set of numbers.  Note that it may be helpful to put example responses after each question.  [X]
 ```
 Do you have a red car? (yes, no):
 ```
 
-Ask the user for the name of their favorite pet.  
+Ask the user for the name of their favorite pet.  [X]
 
 Ask the user for the age of their favorite pet. (*NOTE:* the `next()` function will not work here, look up what the appropriate `Scanner` method is to read numbers.)  
+//Integer.parseInt(input.nextLine());
 
-What is their lucky number?
+What is their lucky number? [X]
 
-Do they have a favorite quarterback?  If so what is their jersey number?  
+Do they have a favorite quarterback?  If so what is their jersey number?   [X]
 
-What is two-digit model year of their car?
+What is two-digit model year of their car? [X]
 
-What is the first name of the their favorite actor or actress?  
+What is the first name of the their favorite actor or actress?   [X]
 
-Enter a random number between 1 and 50.
+Enter a random number between 1 and 50. [X]
 
 **Generating output** 
-Now that you have 6 or 7 pieces of information it's time to generate the lottery numbers.  The output will 5 random numbers between 1 and 65, and the "magic ball" between 1 and 75.  
+Now that you have 6 or 7 pieces of information it's time to generate the lottery numbers.  The output will 5 random numbers between 1 and 65, and the "magic ball" between 1 and 75. 
+ 
 To accomplish this you should have 3 random integers, generated in the same way as in the previous exercises.  You may also want to declare constants for the max values of each set of of numbers.   
 
-Generate the "magic ball" first.  It should be the user's favorite quarterback jersey number *or* their lucky number, multiplied by one of the random numbers.  Make sure that the answer is less the max "magic" number of 75; if it is greater than 75 then subtract 75 from the value and that value is now the "magic ball" number.  
+Generate the "magic ball" first.  It should be the user's favorite quarterback jersey number *or* their lucky number, multiplied by one of the random numbers.  Make sure that the answer is less the max "magic" number of 75; if it is greater than 75 then subtract 75 from the value and that value is now the "magic ball" number.  [X]
 
 For the 5 non-magic numbers use your choice of any of the following methods to generate values: (Note that you may have to adjust each value to correct range by adding/subtracting.)
-* Find the 3rd letter of their favorite pet.  Convert that character value to an integer value.
+* Find the 3rd letter of their favorite pet.  Convert that character value to an integer value.[X]
 * Use the two digit model year of their car and add their lucky number to it.
 * Use the random number between 1 and 50, subtracting one of the generated random numbers.
 * Convert the first letter of their favorite actor/actress to an integer and use that value.
