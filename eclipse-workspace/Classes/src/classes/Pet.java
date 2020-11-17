@@ -6,17 +6,22 @@ public class Pet {
     private int age;
     private String location;
     private String type;
+    private boolean isLiving;
     
     //constructor no params
+//    public Pet() {
+//        this.name = "Muggles";
+//        this.age = 100;
+//        this.location = "Behind you";
+//        this.type = "unknown";
+//    }
     public Pet() {
-        this.name = "Muggles";
-        this.age = 100;
-        this.location = "Behind you";
-        this.type = "unknown";
+    	
     }
     
     //constructor all params
     public Pet(String name, int age, String location, String type) {
+    	
         this.name = name;
         this.age = age;
         this.location = location;
@@ -50,6 +55,8 @@ public class Pet {
     	this.location = location;
     }
 
+    
+    
 
 
 }
