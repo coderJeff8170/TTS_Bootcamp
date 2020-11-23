@@ -1,0 +1,17 @@
+/* https://upload.wikimedia.org/wikipedia/commons/4/49/2003-2006_Honda_Element_--_08-28-2011.jpg */
+
+.jumbotron {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/49/2003-2006_Honda_Element_--_08-28-2011.jpg");
+  background-size: cover;
+}
+.jumbotron .container {
+  text-align: center;
+  display: block;
+}
+
+.carousel-item img {
+  height: 500px;
+  width: auto;
+  object-fit: cover;
+  object-position: top;
+}
