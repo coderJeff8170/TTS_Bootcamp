@@ -87,6 +87,10 @@ public class Car {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+	
+	public Long getId() {
+		return id;
+	}
 
 	@Override
 	public String toString() {

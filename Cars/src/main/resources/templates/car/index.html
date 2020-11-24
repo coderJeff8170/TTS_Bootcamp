@@ -16,11 +16,9 @@
 	<div th:replace="car/fragments/header :: header"></div>
 	<section>
 	<div class="jumbotron jumbotron-fluid">
-      <div class="container">
+      <div class="container" id="title">
         <h1 class="display-4">Cars! Cars! Cars!</h1>
-        <p class="lead">Prepare to be internally combusted!
-          
-        </p>
+        <p class="lead">Prepare to be internally combusted (or electrified)!</p>
       </div>
     </div>
 	</section>
@@ -30,9 +28,9 @@
     <div class="bd-example">
       <div id="carCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#car1" data-slide-to="0" class="active"></li>
-          <li data-target="#car2" data-slide-to="1"></li>
-          <li data-target="#car3" data-slide-to="2"></li>
+          <li data-target="#carCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#carCarousel" data-slide-to="1"></li>
+          <li data-target="#carCarousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -58,11 +56,11 @@ Philippe Oursel">
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carCarousel" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
