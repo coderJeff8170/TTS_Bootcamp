@@ -14,9 +14,15 @@
 <body>
 	<!-- header template imported -->
 	<div th:replace="car/fragments/header :: header"></div>
-	<div class="container">
-		<h1 th:text="${car.make}" ></h1>
-		<h1 th:text="${car.model}" ></h1>
+	<div  class="container d-flex justify-content-center">
+		<div class="card col-md-6 text-center" >
+			<img th:src="${car.photoURL}" class="card-img-top" alt="No photo available for this car">
+			<div class="card-body">
+				<h5 class="card-title"><span th:text="${car.year}"/> <span th:text="${car.make}"/> <span th:text="${car.model}"/></h5>
+				<p class="card-text" th:text="${car.description}"></p>
+				<a href="/cars" class="btn btn-primary">Back to list</a>
+			</div>
+		</div>
 	</div>
 
 	<!--footer template imported  -->
