@@ -47,6 +47,7 @@ public class BlogPostController {
         return "blogpost/new";
     }
     
+    //to make edit function on result page, it needs an id for the post
     @PostMapping(value = "/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model) {
 	blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
@@ -54,6 +55,7 @@ public class BlogPostController {
 	model.addAttribute("title", blogPost.getTitle());
 	model.addAttribute("author", blogPost.getAuthor());
 	model.addAttribute("blogEntry", blogPost.getBlogEntry());
+	model.addAttribute("blogEntry", blogPost.getId());//adds id to the page I think...
 	return "blogpost/result";
     }
     
@@ -73,6 +75,7 @@ public class BlogPostController {
 
     }
     //edit entry method 
+    //at this point you might have to make both buttons forms and set method to POST?
     @RequestMapping(value = "/blogposts/{id}", method = RequestMethod.GET)
     public String editPostWithId(@PathVariable Long id, BlogPost blogPost, Model model) {
         Optional<BlogPost> post = blogPostRepository.findById(id);

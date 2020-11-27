@@ -14,7 +14,7 @@
 <body>
 	<!-- header template imported -->
 	<div th:replace="car/fragments/header :: header"></div>
-	<div class="container">
+	<div class="container" id="main">
 		<h1 class="text-center">Add a car to the database</h1>
 	<form action="#" th:action="@{/addcar}" th:object="${car}" method="post">
 		<div class="form-group">

@@ -19,10 +19,16 @@
 					</div>
 					<div class="panel-footer">
 						<!-- Link to Update -->
+						<!-- Cannot use id here as it is not passed to body..? -->
+						<!-- added id attribute, but still saying can't use get method.. -->
+						<a th:href="@{/blogposts/{id}(id=${id})}">
+									<button class="btn btn-light">Edit Post</button>
+								</a>
 						<!-- Link to Show  -->
 						<!--  Link to Destroy -->
 						<a th:href="@{/}"><button class="btn btn-success">Back
-								To Home Page</button></a> <a th:href="@{/blogposts/new}"><button
+								To Home Page</button></a>
+						<a th:href="@{/blogposts/new}"><button
 								class="btn btn-primary">Submit a New Blog Post</button></a>
 					</div>
 				</div>

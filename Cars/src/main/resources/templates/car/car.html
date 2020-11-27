@@ -14,7 +14,7 @@
 <body>
 	<!-- header template imported -->
 	<div th:replace="car/fragments/header :: header"></div>
-	<div  class="container d-flex justify-content-center">
+	<div id="main" class="container d-flex justify-content-center" >
 		<div class="card col-md-6 text-center" >
 			<img th:src="${car.photoURL}" class="card-img-top" alt="No photo available for this car">
 			<div class="card-body">
