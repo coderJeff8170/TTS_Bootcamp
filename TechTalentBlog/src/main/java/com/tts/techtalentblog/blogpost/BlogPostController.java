@@ -50,13 +50,14 @@ public class BlogPostController {
     //to make edit function on result page, it needs an id for the post
     @PostMapping(value = "/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model) {
-	blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
-	posts.add(blogPost);
-	model.addAttribute("title", blogPost.getTitle());
-	model.addAttribute("author", blogPost.getAuthor());
-	model.addAttribute("blogEntry", blogPost.getBlogEntry());
-	model.addAttribute("blogEntry", blogPost.getId());//adds id to the page I think...
-	return "blogpost/result";
+		//blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
+    	blogPostRepository.save(blogPost);
+		posts.add(blogPost);
+		model.addAttribute("title", blogPost.getTitle());
+		model.addAttribute("author", blogPost.getAuthor());
+		model.addAttribute("blogEntry", blogPost.getBlogEntry());
+		model.addAttribute("id", blogPost.getId());//<= doesn't return a value
+		return "blogpost/result";
     }
     
     //make a delete method...
@@ -98,7 +99,6 @@ public class BlogPostController {
             blogPostRepository.save(actualPost);
             model.addAttribute("blogPost", actualPost);
         }
- 
         return "redirect:/";
     }
 

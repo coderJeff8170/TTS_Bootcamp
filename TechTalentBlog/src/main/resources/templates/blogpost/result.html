@@ -12,6 +12,7 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h1 th:text="${title}"></h1>
+						<h4 th:text="${id}"></h4>
 					</div>
 					<div class="panel-body">
 						<strong><p th:text="${author}" /></strong>
@@ -21,7 +22,7 @@
 						<!-- Link to Update -->
 						<!-- Cannot use id here as it is not passed to body..? -->
 						<!-- added id attribute, but still saying can't use get method.. -->
-						<a th:href="@{/blogposts/{id}(id=${id})}">
+						<a th:href="@{~/blogposts/{id} (id=${id})}">
 									<button class="btn btn-light">Edit Post</button>
 								</a>
 						<!-- Link to Show  -->
