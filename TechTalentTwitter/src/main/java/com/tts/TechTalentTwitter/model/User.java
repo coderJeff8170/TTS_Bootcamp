@@ -1,6 +1,7 @@
 package com.tts.TechTalentTwitter.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 //why not import javax.persistence.*; here??
@@ -80,10 +81,16 @@ public class User {
 		this.active = active;
 		this.roles = roles;
 	}
-
-
-
-
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), 
+	    inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user_follower", joinColumns = @JoinColumn(name = "user_id"), 
+	inverseJoinColumns = @JoinColumn(name = "follower_id"))
+	private List<User> followers;
 
 	public String getEmail() {
 		return email;
@@ -152,10 +159,27 @@ public class User {
 	}
 
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), 
-	    inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles;
+	
+	
+	public List<User> getFollowers() {
+		return followers;
+	}
+
+	public void setFollowers(List<User> followers) {
+		this.followers = followers;
+	}
+
+	public List<User> getFollowing() {
+		return following;
+	}
+
+	public void setFollowing(List<User> following) {
+		this.following = following;
+	}
+
+
+	@ManyToMany(mappedBy="followers")
+	private List<User> following;
 
 //apparently just for debugging?
 	@Override

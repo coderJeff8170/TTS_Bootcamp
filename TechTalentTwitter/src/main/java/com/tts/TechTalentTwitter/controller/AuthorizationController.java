@@ -40,6 +40,7 @@ public class AuthorizationController {
             userService.saveNewUser(user);
             model.addAttribute("success", "Sign up successful!");
             model.addAttribute("user", new User());
+            model.addAttribute("name", user.getUsername());
         }
         return "registration";
     }

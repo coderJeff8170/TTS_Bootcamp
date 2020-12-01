@@ -4,23 +4,41 @@
 
 <head>
     <title>Feed</title>
-    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="/custom.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/custom.js"></script>
+    <!-- TODO: add styling fragment -->
+    <div th:replace="/fragments/styles :: head-style" ></div>
 </head>
 <body>
     <div class="container">
-        <h2>Tweets</h2>
-        <div th:each="tweet:${tweetList}">
-            <h5>@<span th:text="${tweet.user.username}"></span>
-            <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
-            <p th:utext="${tweet.message}"></p>
-    	</div>
+    <div th:replace="fragments/navbar"></div>
+    	<!-- IF THERE ARE TWEETS -->
+        <div th:if="${not #lists.isEmpty(tweetList)}">
+			<h3>Tweets</h3>
+			<div th:each="tweet:${tweetList}">
+				<div class="card" style="border: 1px solid #ccc; border-radius: 5px; margin-top: 10px;">
+				  <div class="card-header" style="background: #00aced; color: white; padding: 10px;">
+				  <h5 class="">@<span th:text="${tweet.user.username}"></span>
+	            	<small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}" style="color: white;"></span></small></h5>
+				  </div>
+				  <div class="card-body" style="padding: 10px">
+				    
+				    <p class="card-text" th:utext="${tweet.message}"></p>
+				  </div>
+				</div>
+			<!-- <div class="list-group-item">
+				<h5>@<span th:text="${tweet.user.username}"></span>
+	            <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
+	            <p th:utext="${tweet.message}"></p>
+			</div> -->
+	            
+	    	</div>
+		</div>
+		<!-- ELSE -->
+		<div th:if="${#lists.isEmpty(tweetList)}">
+		<div sec:authorize="isAuthenticated()"><a style="pointer-events: none;color: #00aced">
+      Hello <span sec:authentication="name"></span></a></div>
+			<h3>No Recent Tweets</h3>
+		</div>
+
     </div>
 </body>
 </html>

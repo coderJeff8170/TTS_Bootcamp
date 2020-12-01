@@ -3,17 +3,24 @@
 
 <head>
     <title>Log in</title>
-    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="/custom.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/custom.js"></script>
+    <!-- TODO: add styling fragment -->
+    <div th:replace="/fragments/styles :: head-style" ></div>
 </head>
 <body>
     <div class="container">
+    <div th:replace="fragments/navbar"></div>
+    	<!-- IF THERE IS A SUCCESS MESSAGE -->
+        <div th:if="${success}">
+			<h3 th:text="${success}"></h3>
+			<h2 >Welcome, <span th:text="${name}"></span>!</h2>
+			<div class="text-right"><!-- TODO: Create button to signup - needs to be a mini form w/get request - look at controller -->
+        	<form action="#" th:action="@{/login}" method="get">
+			 <button class="btn btn-primary">Log In</button>
+			</form>
+        </div>
+		</div>
+		<!-- ELSE -->
+		<div th:if="not ${success}">
         <h2>Sign up</h2>		
         <form th:action="@{/signup}" th:object="${user}" method="post" autocomplete="off" >
             <div class="form-group">
@@ -40,5 +47,6 @@
                 <button class="btn btn-md btn-success btn-block" name="Submit" value="Submit" type="Submit" th:text="Submit"></button>
             </div>
         </form>
+        </div>
     </div>
 </body>
