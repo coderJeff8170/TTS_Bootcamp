@@ -13,30 +13,56 @@
     	<!-- IF THERE ARE TWEETS -->
         <div th:if="${not #lists.isEmpty(tweetList)}">
 			<h3>Tweets</h3>
+			<ul class="nav nav-tabs">
+			    <li role="presentation" th:classappend="${filter == 'all' ? 'active' : '' }">
+			        <a href="/tweets">All</a></li>
+			    <li role="presentation" th:classappend="${filter == 'following' ? 'active' : '' }">
+			        <a href="/tweets?filter=following">Following</a></li>
+			</ul><br/>
+						
 			<div th:each="tweet:${tweetList}">
+			<!-- feed.html is getting a tweetlist from the tweet controller -->
+			<!-- each tweet has a user(author) -->
+			<!-- current logged in user -> do we need to add this functionality userSvc.getloggedInUser to our feed
+				route handler??  -->
+			<!-- if the tweet's user is in the 'following' list of the logged in user, display the tweet -->
+			<!-- <div th:if="${tweet.followingStatus.containsKey(tweet.user.username) && tweet.followingStatus.get(tweet.user.username)}"> -->
+				
 				<div class="card" style="border: 1px solid #ccc; border-radius: 5px; margin-top: 10px;">
 				  <div class="card-header" style="background: #00aced; color: white; padding: 10px;">
-				  <h5 class="">@<span th:text="${tweet.user.username}"></span>
-	            	<small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}" style="color: white;"></span></small></h5>
+				  	<h5><a th:href="@{/users/} + ${tweet.user.username}">@<span th:text="${tweet.user.username}"></span></a>
+	            		<small><small th:text="${tweet.date}" style="color: white;"></small></small>
+	            	</h5>
 				  </div>
 				  <div class="card-body" style="padding: 10px">
 				    
 				    <p class="card-text" th:utext="${tweet.message}"></p>
 				  </div>
 				</div>
-			<!-- <div class="list-group-item">
-				<h5>@<span th:text="${tweet.user.username}"></span>
-	            <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
-	            <p th:utext="${tweet.message}"></p>
-			</div> -->
-	            
+				
+	    	<!-- </div> -->
+	    	
 	    	</div>
+	    	
 		</div>
 		<!-- ELSE -->
-		<div th:if="${#lists.isEmpty(tweetList)}">
+		<!-- <div th:if="${#lists.isEmpty(tweetList)}">
 		<div sec:authorize="isAuthenticated()"><a style="pointer-events: none;color: #00aced">
       Hello <span sec:authentication="name"></span></a></div>
 			<h3>No Recent Tweets</h3>
+		</div> -->
+		
+		
+		<div th:if="${#lists.isEmpty(tweetList) and filter == 'all'}">
+			<div sec:authorize="isAuthenticated()">
+			<a style="pointer-events: none;color: #00aced">
+				Hello <span sec:authentication="name"></span>
+			</a>
+	      	</div>
+	    <h3>No tweets have been created yet</h3>
+		</div>
+		<div th:if="${#lists.isEmpty(tweetList) and filter == 'following'}">
+		    <h3>No tweets have been created by your followers</h3>
 		</div>
 
     </div>

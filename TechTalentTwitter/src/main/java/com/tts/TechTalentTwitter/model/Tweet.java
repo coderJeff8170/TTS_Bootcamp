@@ -21,7 +21,15 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 
+//import lombok.AllArgsConstructor;
+//import lombok.Builder;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
 
+//@Data
+//@Builder
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 public class Tweet {
 
@@ -45,6 +53,7 @@ public class Tweet {
 
 	@CreationTimestamp
 	private Date createdAt;
+
 
 	 public Long getId() {
 	 return id;

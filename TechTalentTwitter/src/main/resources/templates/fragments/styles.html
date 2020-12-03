@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<title>Style fragments</title>
+
 <div th:fragment="head-style">
 	    <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +9,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/custom.js"></script>
 </div>
-</head>
 
-<body>
 
-	<div th:fragment="body-links">
-		<script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
-		<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
-	</div>
-</body>
-</html>

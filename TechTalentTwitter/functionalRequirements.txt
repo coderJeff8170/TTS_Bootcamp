@@ -15,3 +15,32 @@
 
 5. On the main feed page, improve the styling of the tweets. Check out the bootstrap list-group
 	and list-group-item classes and use them to display each tweet inside of a box. [X]
+
+	
+1. Let's think back to day 1. In our AuthorizationController, we sent back a success message in 
+	the model if the registration was successful. We haven't done anything with it yet.
+	On the registration page, if a success message comes back, hide the form, display 
+	the success message, and display a button to navigate to the login page. If a user 
+	is filling out form still (no success message included in the model), then the page 
+	should look the same as it does now. (same as above)[X]
+
+2. Add username links to the main feed, just like we did in the user and hashtag pages. [X]
+
+3. On the main feed, we currently show all tweets in the system. Change it so that it only
+	shows tweets for the accounts the user is following. 
+
+4. On the users page, display the text '(Me)' next to the username of the currently logged in user.[X]
+
+
+model is blueprint on the objects and how they operate
+model package - lists class definitions for the data -> objects
+
+controller runs methods that take http request and return an html page 
+also handles all information processing. 
+
+service serves practical functions that can be used in individual controllers
+
+repo - extends crud repo methods so communicates with the database and handles the storing of information
+
+config - uses boilerplate code to 
+
