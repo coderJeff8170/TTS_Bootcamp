@@ -8,7 +8,7 @@
     <div th:replace="/fragments/styles :: head-style" ></div>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
     <div th:replace="fragments/navbar"></div>
     	<!-- IF THERE ARE TWEETS -->
         <div th:if="${not #lists.isEmpty(tweetList)}">
@@ -20,7 +20,7 @@
 			        <a href="/tweets?filter=following">Following</a></li>
 			</ul><br/>
 						
-			<div th:each="tweet:${tweetList}">
+			<div th:each="tweet:${tweetList}" class="col-md-6">
 			<!-- feed.html is getting a tweetlist from the tweet controller -->
 			<!-- each tweet has a user(author) -->
 			<!-- current logged in user -> do we need to add this functionality userSvc.getloggedInUser to our feed

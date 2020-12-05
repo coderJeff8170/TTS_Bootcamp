@@ -8,8 +8,9 @@
     <div th:replace="/fragments/styles :: head-style" ></div>
 </head>
 <body>
-    <div class="container">
-    <div th:replace="fragments/navbar"></div>
+<div th:replace="fragments/navbar"></div>
+    <div class="container-fluid">
+    
         <div class="jumbotron col-md-8 col-md-offset-2">
             <h2>New Tweet</h2><br/>
             <form th:action="@{/tweets}" th:object="${tweet}" method="post" autocomplete="off">

@@ -7,13 +7,13 @@
     <div th:replace="/fragments/styles :: head-style" ></div>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
     <div th:replace="fragments/navbar"></div>
     	<!-- IF THERE IS A SUCCESS MESSAGE -->
         <div th:if="${success}">
 			<h3 th:text="${success}"></h3>
 			<h2 >Welcome, <span th:text="${name}"></span>!</h2>
-			<div class="text-right"><!-- TODO: Create button to signup - needs to be a mini form w/get request - look at controller -->
+			<div class="text-right">
         	<form action="#" th:action="@{/login}" method="get">
 			 <button class="btn btn-primary">Log In</button>
 			</form>
