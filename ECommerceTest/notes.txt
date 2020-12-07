@@ -1,0 +1,32 @@
+trello
+
+sketch
+draw.io
+dbdesigner.net
+
+github
+invite collaborators - 
+allows them to add code without going thru
+
+branch checkout
+
+make a pull request - all team members must agree
+
+then merge
+
+ALWAYS GIT PULL FIRST
+
+first
+
+git clone <repo address>
+
+^^ goes in directory you're in
+
+git status
+
+git add (files changed)
+
+git commit
+ 
+ git push
+ 
