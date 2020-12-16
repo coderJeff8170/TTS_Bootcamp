@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<head th:replace="fragments/header"></head>
+
+<style>
+	.jumbotron {
+	  background-image: url("https://wolffvineyards.com/wp-content/uploads/2019/06/Vinyard-at-dawn-1280x720.jpg");
+	  background-position: 50% 30%;
+	  background-size: cover;
+	}
+	.jumbotron .container {
+	  text-align: center;
+	  display: block;
+	}
+	.img-crop{
+		width: 250px;
+        height: 250px;
+        overflow: hidden;
+        }
+        
+	.about-img{
+		width: 300px;
+	 	height: 300px;
+	}
+		
+	.footer {
+		padding-top: 20px;
+		color: white;
+		background: rgba(255, 255, 255, 0.2);
+		width: 100%;
+	}
+    </style>
+</head>
+
+
+
+<body>
+<div th:replace="fragments/navbar"></div>
+	<div class="jumbotron">
+  <h1 class="display-4">Humble beginnings...</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+<section class="container ">
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-5 text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh venenatis cras sed felis eget. Ut tristique et egestas quis. Fames ac turpis egestas maecenas. Arcu bibendum at varius vel pharetra vel turpis. Nibh ipsum consequat nisl vel pretium lectus. Consequat mauris nunc congue nisi vitae suscipit.</p>
+		</div>
+		<div  class="col-md-4">
+			<div class="img-crop">
+			<img class="about-img" src="https://www.paintedbyjeff.com/school/IMG_4691.JPG" alt="wine in the tropics">
+			</div>
+			
+		</div>
+	</div>
+	<div class="row d-flex justify-content-center">
+	<div  class="col-md-4">
+			<div class="img-crop">
+			<img class="about-img" src="https://www.paintedbyjeff.com/school/IMG_4691.JPG" alt="wine in the tropics">
+			</div>
+			
+		</div>
+		<div class="col-md-5 text text-right">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh venenatis cras sed felis eget. Ut tristique et egestas quis. Fames ac turpis egestas maecenas. Arcu bibendum at varius vel pharetra vel turpis. Nibh ipsum consequat nisl vel pretium lectus. Consequat mauris nunc congue nisi vitae suscipit.</p>
+		</div>
+		
+	</div>
+</section>
+<div  id="footer-container" th:replace="fragments/footer"></div>
+</body>
+</html>

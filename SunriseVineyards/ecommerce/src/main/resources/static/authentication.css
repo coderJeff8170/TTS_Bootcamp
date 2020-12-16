@@ -1,0 +1,28 @@
+body {
+	  background: url(https://wolffvineyards.com/wp-content/uploads/2019/06/Vinyard-at-dawn-1280x720.jpg) no-repeat center center; 
+	  background-size: cover;
+	  text-align: center;   
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	}
+	
+	#fader{
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.2);
+		position: relative;
+		
+	}
+	
+	.form-container{
+		padding-top: 20px;
+		border-radius: 5px;
+		background: rgba(255, 255, 255, 0.8);
+	}
+	
+	.footer {
+		padding-top: 20px;
+		color: white;
+		background: rgba(255, 255, 255, 0.2);
+		width: 100%;
+	}

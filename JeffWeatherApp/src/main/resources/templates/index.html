@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<div class="container bg-light justify-content-center">
+    <div class="row">
+    
+    
+    
+        <div class="col-md-6 offset-md-3">
+		    <br/>
+		    <h1 class="text-center">Get Your Local Forecast</h1>
+		    <form th:action="@{/}" th:object="${request}" method="post" autocomplete="off" >
+		        <div class="form-group">
+		            <input type="text" th:field="*{zipCode}" placeholder="Zip Code" class="form-control"/>
+		        </div>
+		        <div class="form-group">
+		            <button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">
+		                                                                                    Check Weather</button>
+		        </div>
+		    </form>
+		    <span th:if="${data != null && data.name == 'error'}">Invalid zip code. Weather data not found.</span>
+			<div th:if="${data != null && data.name != 'error'}">
+		    <hr>
+		    <!-- <div th:if="${data != null}"> -->
+		    <h3>Forecast for <span th:text="${data.name}"></span></h3>
+
+			
+			
+            <p><b>Temperature:</b> <span th:text="${data.main.get('temp')}"></span> °F</p>
+            <p><b>Cloud Cover:</b> <span th:text="${data.clouds.get('all')}"></span> %</p>
+            <p><b>Wind:</b> <span th:text="${data.wind.get('speed')}"></span> mph</p>
+            <p><b>Conditions:</b> <span th:text="${data.weather[0].get('description')}"></span>
+                        <img th:src="@{${'http://openweathermap.org/img/w/' 
+                + data.weather[0].get('icon') + '.png'}}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>Stuff here</h3>
+<table class="table" style="width:100%">
+<thead class="thead-light">
+  <tr>
+    <th>Id</th>
+    <th>ZipCode</th>
+    <th>Created</th>
+  </tr>
+</thead>
+  <tr th:each="code:${zipCodes}">
+    <td th:text="${code.id}"></td>
+    <td th:text="${code.zipCode}"></td>
+    <td th:text="${code.createdAt}"></td>
+  </tr>
+  
+</table>
+<!-- <div th:each="code:${zipCodes}"> -->
+	<!-- feed.html is getting a tweetlist from the tweet controller -->
+	<!-- each tweet has a user(author) -->
+	<!-- current logged in user -> do we need to add this functionality userSvc.getloggedInUser to our feed
+		route handler??  -->
+	<!-- if the tweet's user is in the 'following' list of the logged in user, display the tweet -->
+	<!-- <div th:if="${tweet.followingStatus.containsKey(tweet.user.username) && tweet.followingStatus.get(tweet.user.username)}"> -->
+	<!-- <h5 th:text="${code.zipCode}"></h5> -->
+				
+<!-- </div> -->

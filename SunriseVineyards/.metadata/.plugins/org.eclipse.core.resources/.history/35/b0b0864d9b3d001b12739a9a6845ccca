@@ -1,0 +1,29 @@
+MERGE INTO `role` VALUES (1,'USER');
+merge into `product` values 
+	(1, 
+	'Silver Oak', 
+	'Cabernet',
+	'The dark ruby color enchants while the wine releases an aromatic red cherry, violet, pomegranate and faint raspberry bouquet with hints of toasty oak. On the palate, it is medium bodied with red raspberry.',
+	'https://www.wines.com/shop/wp-content/uploads/thumbs_dir/silver-oak-500x-6pqe8oo7ktvslsaothch9picakay2n2f317wtw02scy.jpg',
+	'Silver Oak Cabernet Sauvignon',
+	80,
+	3);
+merge into `product` values 
+	(2, 
+	'Coppola', 
+	'Merlot',
+	'Coppola's Blue Label Merlot combines fruit from Napa, Sonoma and Monterey. The flavors and textures unique to each region are blended to create a wine that is complex yet harmonious. Intense berry aromas  lead into flavors of vanilla.',
+	'https://www.wines.com/shop/wp-content/uploads/2017/11/coppola-blue-merlot-500X.jpg',
+	'Francis Coppola Merlot',
+	75,
+	6000);
+merge into `product` values 
+	(3, 
+	'Flowers', 
+	'Pinot',
+	'Very versatile Sangiovese from Tuscany, Italy.  The color is red-mauve. The bouquet is reminiscent of fresh spicy cherry and violet aromas. The taste is soft and medium bodied with hints of cherry and a lingering, fruity finish.',
+	'https://www.wines.com/shop/wp-content/uploads/2017/11/flowers-pinot-noir-500x.jpg',
+	'Flowers Pinot 2013',
+	60,
+	2)
+--USER_ID  	BRAND  	CATEGORY  	DESCRIPTION  	IMAGE_URL  	NAME  	PRICE  	QUANTITY

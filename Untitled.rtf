@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww12860\viewh13980\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 So, in case you\'92re wondering, and to keep it from confusing you, Maven is built into the project starter for Spring Boot, and it handles all the dependencies using an XML file called POM.xml. POM stands for project object model. Don\'92t be scared. XML is just glorified HTML-like format for storing data. Remember when we selected the dependencies by checking boxes when we made our projects? Those dependencies were added to the POM file when you clicked \'91finish\'92. You can add others by opening the POM file and right clicking, selecting Maven, then \'91add dependency\'92 and you can search for dependencies, just like we did in the lesson. So, for example, if you forgot to add Thymeleaf to your project, you can do it here. You may have heard of Gradle. Gradle does the same thing, but it uses JSON instead of XML to handle the dependencies. \
+\
+package com.tts.cars.controllers;\
+\
+import org.springframework.stereotype.Controller;\
+import org.springframework.web.bind.annotation.GetMapping;\
+//import org.springframework.web.bind.annotation.RequestMapping;\
+//import org.springframework.web.bind.annotation.RestController;\
+\
+//vv allows us to output to browser with no view!@RestController\
+//vv allows us to output to browser with a view @Controller\
+@Controller\
+public class MainController \{\
+\
+	@GetMapping("/")\
+	public String index() \{\
+		return "index";\
+	\}\
+\
+	@GetMapping("/cars")\
+	public String cars() \{\
+		return "cars";\
+	\}\
+	\
+	@GetMapping("/addcar")\
+	public String addCar() \{\
+		return "addcar";\
+	\}\
+\
+	// vv defines default route\
+//	@RequestMapping("/")\
+//	public String home() \{\
+//		return "Hello world";\
+//	\}\
+//	\
+\
+\}\
+\
+789 286 8751}

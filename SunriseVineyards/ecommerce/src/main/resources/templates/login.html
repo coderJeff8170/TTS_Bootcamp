@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+<head th:replace="fragments/header"></head>
+<link href="../authentication.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+	
+	<div th:replace="fragments/navbar"></div>
+	
+	<h2>Welcome to Sunrise Vineyards!</h2>
+​
+	<div id="signup-main" class="container form-container">
+		<form th:action="@{/login}" method="post">
+			<div class="form-group">
+				<input type="text" id="username" name="username" th:placeholder="Username" class="form-control" />
+			</div>
+			<div class="form-group">
+				<input type="password" th:placeholder="Password" id="password" name="password" class="form-control" />
+			</div>
+			<div align="center" th:if="${param.error}">
+					<h4 style="color: red">Login unsuccessful.</h4>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-md btn-outline-success" name="Submit" value="Login" type="Submit">Log in</button>
+			</div>
+		</form>
+​
+			<div>
+				<p>Don't have an account? <a th:href="@{/signup}">Sign Up!</a> </p>
+			</div>
+			
+	</div>
+	
+​
+	<div  id="footer-container" th:replace="fragments/footer"></div>
+	
+​
+</body>
+</html>
