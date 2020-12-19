@@ -1,0 +1,8 @@
+1. Add a button to the page that acts as its own form [X]
+
+2. Modify the controller to recognize when a random request has been made[X]
+
+3. Add a service method to generate a set of random coordinates[X]
+
+4. In the same service method, use the geocoding API to get a city and state from a set of coordinates. 
+This is the opposite of what we're doing in the normal case, but it's just as easy. 
