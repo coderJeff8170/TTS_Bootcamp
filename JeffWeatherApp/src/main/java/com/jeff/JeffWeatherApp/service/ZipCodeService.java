@@ -1,9 +1,9 @@
 package com.jeff.JeffWeatherApp.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.jeff.JeffWeatherApp.model.ZipCode;
@@ -21,10 +21,14 @@ public class ZipCodeService {
 		return zipCodes;
 	}
 
-	public List<ZipCode> findAllLimit(Pageable limit) {
+	public List<ZipCode> getLastTen() {
 		// TODO Auto-generated method stub
 		List<ZipCode> zipCodes = zipCodeRepository.findAllByOrderByCreatedAtDesc();
-		return zipCodes;
+		List<ZipCode> lastTenZipCodes = new ArrayList<>();
+		for(int i=0; i<10; i++) {
+			lastTenZipCodes.add(zipCodes.get(i));
+		}
+ 		return lastTenZipCodes;
 	}
 
 

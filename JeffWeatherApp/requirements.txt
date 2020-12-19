@@ -8,8 +8,9 @@
 
 5) Any time the getForecast method is called in the weather service, add the zip code to the database [X]
 
-6) Create a weather service method to get the (up to 10) most recent searches
+6) Create a weather service method to get the (up to 10) most recent searches [X]
 
-7) In both of the weather controller methods, call the new service method and add the the list of zip codes to the model
+7) In both of the weather controller methods, call the new service method and add 
+the list of zip codes to the model [X]
 
-8) In the html page, add code to display the recent searches in a table
+8) In the html page, add code to display the recent searches in a table [X]

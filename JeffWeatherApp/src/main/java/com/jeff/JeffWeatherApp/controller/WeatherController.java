@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jeff.JeffWeatherApp.model.Request;
 import com.jeff.JeffWeatherApp.model.Response;
@@ -35,8 +38,7 @@ public class WeatherController {
     //attribute to hold list of recent zipcodes
     @ModelAttribute("zipCodes")
     public List<ZipCode> zipCodes() {
-    	Pageable limit = PageRequest.of(0,10);
-        return zipCodeService.findAllLimit(limit);
+    	return zipCodeService.getLastTen();
     }
     
     
@@ -49,9 +51,34 @@ public class WeatherController {
     @PostMapping
     public String postIndex(Request request, Model model) {
         Response data = weatherService.getForecast(request.getZipCode());
+        System.out.println(data);
         model.addAttribute("data", data);
         //make list of zipCodes available to 'index'
         model.addAttribute("zipCodes");
         return "index";
     }
+    
+    @RequestMapping(value = "/{zipCode}", method = RequestMethod.GET)
+    public String getIndexWithId(@PathVariable String zipCode, Model model) {
+    	Response data = weatherService.getForecast(zipCode);
+
+    	model.addAttribute("data", data);
+    	
+        return "weatherPage";
+    }
+    
+//    @RequestMapping(value = "/{zipCode}", method = RequestMethod.GET)
+//    public String getIndexWithId(@PathVariable String zipCode, Model model) {
+//    	Response data = weatherService.getForecast(zipCode);
+//        //Optional<BlogPost> post = blogPostRepository.findById(id);
+////        if (post.isPresent()) {
+////            BlogPost actualPost = post.get();
+////            model.addAttribute("blogPost", actualPost);
+////        }
+//    	System.out.println(data);
+//
+//        return "test";
+//    }
+//    
+    
 }

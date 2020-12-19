@@ -40,8 +40,9 @@
         </div>
     </div>
 </div>
-<h3>Stuff here</h3>
-<table class="table" style="width:100%">
+<div class="container" style="padding-top: 20px;">
+	<h3 class="text-center">Last 10 Zip Codes Searched:</h3>
+<!-- <table class="table" style="width:100%">
 <thead class="thead-light">
   <tr>
     <th>Id</th>
@@ -55,14 +56,24 @@
     <td th:text="${code.createdAt}"></td>
   </tr>
   
+</table> -->
+
+<!-- test table with links to zips -->
+<table class="table" style="width:100%">
+<thead class="thead-light">
+  <tr>
+    <th>Id</th>
+    <th>ZipCode</th>
+    <th>Created</th>
+  </tr>
+</thead>
+  <tr th:each="code:${zipCodes}">
+    <td th:text="${code.id}"></td>
+    <td ><a th:href="@{/{zipCode}(zipCode=${code.zipCode})}"><span th:text="${code.zipCode}"></span></a></td>
+    
+    <td th:text="${code.createdAt}"></td>
+  </tr>
+  
 </table>
-<!-- <div th:each="code:${zipCodes}"> -->
-	<!-- feed.html is getting a tweetlist from the tweet controller -->
-	<!-- each tweet has a user(author) -->
-	<!-- current logged in user -> do we need to add this functionality userSvc.getloggedInUser to our feed
-		route handler??  -->
-	<!-- if the tweet's user is in the 'following' list of the logged in user, display the tweet -->
-	<!-- <div th:if="${tweet.followingStatus.containsKey(tweet.user.username) && tweet.followingStatus.get(tweet.user.username)}"> -->
-	<!-- <h5 th:text="${code.zipCode}"></h5> -->
-				
-<!-- </div> -->
+	
+</div>
