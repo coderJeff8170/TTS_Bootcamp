@@ -5,14 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Length(max = 20, message = "Your firstname can't have more than 20 characters")
 	private String firstName;
+	
+	@Length(min = 2, message = "Your lastname must have at least 2 characters")
 	private String lastName;
+	@Length(min = 4, max=20, message = "State must have between 4 and 20 characters")
 	private String state;
 	
 	public User () {}
@@ -24,7 +30,7 @@ public class User {
 		this.lastName = lastName;
 		this.state = state;
 	}
-
+	
 	public String getFirstName() {
 		return firstName;
 	}

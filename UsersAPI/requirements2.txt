@@ -1,0 +1,44 @@
+# API Implementation Lab
+
+In the lab, we'll update our Users API to include validation and proper response codes.
+
+1. In the User class, add the following annotation-based validation:
+    - First name must be a maximum of 20 characters in length[X]
+    - Last name must be a minimum of 2 characters in length[X]
+    - State must be between 4 and 20 characters in length[X]
+
+2. In the User controller, update the `createUser` method:
+    - Return `ResponseEntity<Void>`[X]
+    - Validate the request body and store validation errors in a BindingResult object[X]
+    - Return a 400 Bad Request HTTP response code if there are any validation errors[X]
+    - Return a 201 Created HTTP response code otherwise[X]
+
+3. Update the `updateUser` method:
+    - Return `ResponseEntity<Void>`[X]
+    - Validate the request body and store validation errors in a BindingResult object[X]
+    - Return a 404 Not Found response code if the user with the given ID does not exist[X]
+    - Return a 400 Bad Request HTTP response code if there are any validation errors[X]
+    - Return a 200 OK HTTP response code otherwise[X]
+
+4. Update the `getUsers` method:
+    - Return `ResponseEntity<List<User>>`[X]
+    - Return a 200 OK HTTP response code along with the list of Users[X]
+    -return new ResponseEntity<List<User>>(users, HttpStatus.OK);[X]
+
+5. Update the `getUserById` method:
+    - Return `ResponseEntity<Optional<User>>`[X]
+    - Return a 404 Not Found response code if the user with the given ID does not exist[X]
+    - Return a 200 OK HTTP response code along with the user data otherwise[X]
+    - Note: because of how optionals work, your method will need to include the following:
+        ```java
+        Optional<User> user = repository.findById(id);
+        if (!user.isPresent()) {
+            ...
+        ```
+
+6. Update the `deleteUser` method:
+    - Return `ResponseEntity<Void>`[X]
+    - Return a 404 Not Found response code if the user with the given ID does not exist[X]
+    - Return a 200 OK HTTP response code otherwise[X]
+
+7. Try making HTTP requests to call all five methods. Create requests so that all possible response scenarios are triggered (ie not found, bad request, etc).
