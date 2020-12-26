@@ -12,6 +12,7 @@ import com.jeff.JeffWeatherApp.repository.ZipCodeRepository;
 
 @Service
 public class WeatherService {
+	//this can come from application properties, or environment variables, the latter being secure and the former, not
     @Value("${api_key}")
     private String apiKey;
     
