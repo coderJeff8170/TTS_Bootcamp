@@ -1,5 +1,5 @@
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2B2D42;" id="navbar">
-        <a class="navbar-brand" href="#top">Painted By Jeff</a>
+        <a class="navbar-brand" href="/">Painted By Jeff</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
  		</button>
@@ -24,15 +24,12 @@
 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Find
 					By Category</a>
 				
-				<!-- TODO: check jquery and get this rolling -->
+				
 				<div class="dropdown-menu" aria-labelledby="dropdown01">
-					<a class="dropdown-item" href="/">All</a>
-					<a class="dropdown-item" href="/">All</a>
-					<a class="dropdown-item" href="/">All</a>
-					<!--/*@thymesVar id="categories" type="java.util.List<com.example.demo.model.Category>"*/-->
-					<!-- <a class="dropdown-item" th:each="category : ${categories}"
+					 <a class="dropdown-item" href="/">All</a>
+					 <a class="dropdown-item" th:each="category : ${categories}"
 						th:text="${category}" th:href="@{/filter(category=${category})}">
-					</a> -->
+					</a>
 				</div>
 			</li>
 			

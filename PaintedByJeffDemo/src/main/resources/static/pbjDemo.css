@@ -1,7 +1,8 @@
 /* ------------- Global -------------- */
 body {
   background-color: #8d99ae;
-
+min-height: 100vh;
+position: relative;
 }
 
 h1 {
@@ -20,6 +21,14 @@ section h1 {
     margin: 50px 0px 10px 0px;
 }
 
+.main{
+	margin-top: 50px;
+	padding-bottom: 155px;
+	border: 2px solid red;
+	min-height: 100vh;
+}
+
+
 
 
 /* ------------- Header -------------- */
@@ -35,7 +44,7 @@ section h1 {
 /* ------------- Jumbotron -------------- */
 
 .jumbotron {
-  margin-top: 50px;
+/*   margin-top: 50px; */
   color: white;
   background-color: #8d99ae;
   background-image: url("https://www.paintedbyjeff.com/assets/FullSize/myFaveMemory24x36.jpg" );
@@ -127,7 +136,7 @@ section h1 {
 
     text-align: center;
     color: white;
-    position: fixed;
+    position: absolute; 
     bottom: 0;
     background-color: #2B2D42;
     width: 100%;

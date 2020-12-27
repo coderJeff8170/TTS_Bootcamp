@@ -34,11 +34,15 @@ public class ProductService {
     public void save(Product product) {
         productRepository.save(product);
     }
-
+    
+    //TODO: use this to 'delete' a product once sold; 
+    //Instead perhaps use put/patch to alter the 'sold' boolean
     public void deleteById(long id) {
         productRepository.deleteById(id);
     }
 
+    //TODO: implement this as find by size or category
+    
 //    public List<Product> findByBrandAndOrCategory(String brand, String category) {
 //        if(category == null && brand == null)
 //            return productRepository.findAll();
@@ -49,4 +53,11 @@ public class ProductService {
 //        else
 //            return productRepository.findByBrandAndCategory(brand, category);
 //    }
+    
+  public List<Product> findByCategory(String category) {
+  if(category == null)
+      return productRepository.findAll();
+  else 
+      return  productRepository.findByCategory(category);
+}
 }

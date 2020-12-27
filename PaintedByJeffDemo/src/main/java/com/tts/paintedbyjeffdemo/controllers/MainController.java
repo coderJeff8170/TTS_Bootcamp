@@ -42,21 +42,13 @@ public class MainController {
         return productService.findDistinctCategories();
     }
 
-//    @ModelAttribute("brands")
-//    public List<String> brands() {
-//        return productService.findDistinctBrands();
-//    }
-    
-
-//    @GetMapping("/filter")
-//    public String filter(@RequestParam(required = false) String category,
-//                         Model model) {
-//        List<Product> filtered = productService.findByBrandAndOrCategory(brand, category);
-//        model.addAttribute("products", filtered); // Overrides the @ModelAttribute above.
-//        return "main";
-//    }
-    
-
+    @GetMapping("/filter")
+    public String filter(@RequestParam(required = false) String category,
+                         Model model) {
+        List<Product> filtered = productService.findByCategory(category);
+        model.addAttribute("products", filtered); // Overrides the @ModelAttribute above.
+        return "main";
+    }
 
     @GetMapping("/about")
     public String about() {
