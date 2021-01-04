@@ -1,10 +1,17 @@
 package com.tts.paintedbyjeffdemo.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
+import org.springframework.beans.factory.annotation.Value;
 
 @Entity
 public class Product {
@@ -15,17 +22,32 @@ public class Product {
     private Long id;
     
     //remove quantity, as paintings are 1 of a kind.
+    @NotEmpty(message = "Please provide a name")
+    @Length(min = 3, message = "Product name must have at least 3 characters")
+    @Length(max = 25, message = "Product name cannot have more than 25 characters")
+    private String name;
+    //TODO: convert to width and height
+    @NotEmpty(message = "Please provide dimensions for the piece")
+    private String dimensions;
+    //TODO: provide a dropdown for type of media
+    private String media;
+    //TODO: create a text-area for this
+    @NotEmpty(message = "Please provide a description")
+    private String description;
+    //TODO: dropdown for category?
+    private String category;
+    //TODO: regex for valid image url
+    @NotEmpty(message = "Please provide a valid image url for the piece")
+    private String image;
     
     private int price;
     
-    private String name;
-    private String dimensions;
-    private String media;
-    private String description;
-    private String category;
-    private String image;
+    //sets initial value automatically to false
+    @Value("false")
+    private boolean sold;
     
-    private Boolean sold;
+    //@CreationTimestamp
+    //private Date createdAt;
     
     public Product () {
     	

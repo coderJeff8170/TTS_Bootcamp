@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <title>PaintedByJeffDemo-main</title>
-<!-- TODO: fix the bootstrapping shit!! -->
+
 	<div th:replace="fragments/head"></div>
 </head>
 
@@ -22,24 +22,8 @@
 	  </div>
     </div>
 		
-		<!-- TODO: create product cards dynamically -->
-		<!-- <div class="container1">
-			<div class="row">
-				Fill this part in
-				<div th:each="product:${products}">
-					<div class="card" style="width: 18rem; height: 40rem;">
-						<img th:src="${product.image}" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title" th:text="${product.name}"></h5>
-							<p class="card-text" th:text="${product.description}"></p>
-							<a th:href="@{/product/} + ${product.id}" class="btn btn-primary">Read</a>
-						</div>
-					</div>
-				</div> 
-			</div>
-		</div> -->
-		
-	<section id="artWork">
+
+	<section id="featured">
       <div class="sectionTitle">
         <h1>Featured/For Sale</h1>
       </div>
@@ -50,9 +34,8 @@
         <div id="petsCard" class="card" style="width: 18rem;">
           <img th:src="${product.image}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Pets!</h5>
-            <p class="card-text">Portraits of our furry friends.</p>
-            <!-- Button should go to category page -->
+            <h5 class="card-title" th:text="${product.name}"></h5>
+            <p class="card-text" th:text="${product.description}"></p>
             <a th:href="@{/product/} + ${product.id}" class="btn btn-secondary">Details</a>
 		</div>
 	</div>
@@ -62,7 +45,7 @@
     </section>
 		
 </div>
-		<!-- TODO: implement footer -->
+
 	<footer th:replace="fragments/footer"></footer>	
 
 </body>
